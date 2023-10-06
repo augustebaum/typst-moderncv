@@ -3,10 +3,6 @@
  *
  * - headings (h1..h4)
  *
- * - `datebox` function: provides content with stacked year above (big) and month below (tinier)
- *
- * - `daterange` function: two `datebox`es separated by an em dash
- *
  * - `xdot`: function, adds a trailing dot to a string only if it's not already present
  *
  * - `cvgrid`: basic layout function that wraps a grid. Controlled by two parameters `left_column_size` (default: 25%) and `grid_column_gutter` (default: 8pt) which control the left column size and the column gutter respectively.
@@ -19,7 +15,7 @@
  *
  */
 
-#let left_column_size = 25%
+#let left_column_size = 10%
 #let grid_column_gutter = 8pt
 
 #let main_color = rgb(147, 14, 14)
@@ -52,9 +48,9 @@
    * - h4: generic heading (normal, colored)
    */
   show heading.where(level: 1): element => [
-    #v(0em)
+    // #v(0em)
     #box(
-      inset: (right: grid_column_gutter, bottom: 0.1em),
+      inset: (right: grid_column_gutter, bottom: 0.15em),
       rect(fill: main_color, width: left_column_size, height: 0.25em)
     )
     #text(element.body, fill: heading_color, weight: 400)
@@ -75,7 +71,7 @@
   set enum(numbering: (n) => text(fill: heading_color, [#n.]))
 
   grid(
-    columns: (1fr, 1fr),
+    columns: (70%, 1fr),
     box[
       // Author information.
       #text([#author], weight: 400, 2.5em)
@@ -84,6 +80,8 @@
     
       // Title row.
       #block(text(weight: 400, 1.5em, title, style: "italic", fill: job_color))
+
+      #v(1em)
     ],
     align(right + top)[
       // Contact information
@@ -91,22 +89,22 @@
 
       #if github != "" {
         align(top)[
-          #box(height: 1em, baseline: 20%)[#pad(right: 0.4em)[#image("icons/github.svg")]]
-          #link("https://github.com/" + github)[#github]
+          #box(height: 1em, baseline: 20%)[#pad(right: 0.2em)[#image("icons/github.svg")]]
+          #link("https://github.com/" + github)[#raw(github)]
         ]
       }
 
       #if phone != "" {
         align(top)[
-          #box(height: 1em, baseline: 20%)[#pad(right: 0.4em)[#image("icons/phone-solid.svg")]]
+          #box(height: 1em, baseline: 20%)[#pad(right: 0.2em)[#image("icons/phone-solid.svg")]]
           #link("tel:" + phone)[#phone]
         ]
       }
 
       #if email != "" {
         align(top)[
-          #box(height: 1em, baseline: 20%)[#pad(right: 0.4em)[#image("icons/envelope-regular.svg")]]
-          #link("mailto:" + email)
+          #box(height: 1em, baseline: 20%)[#pad(right: 0.2em)[#image("icons/envelope-regular.svg")]]
+          #link("mailto:" + email)[#raw(email)]
         ]
       }
     ]
@@ -118,25 +116,16 @@
   body
 }
 
-#let datebox(month: "", year: []) = box(
-  align(center,
-    stack(
-      dir: ttb,
-      spacing: 0.4em,
-      text(size: 1em, [#year]),
-      text(size: 0.75em, month),
-    )
-  )
+#let cell = rect.with(
+  inset: 8pt,
+  width: 100%,
 )
 
-#let daterange(start: (month: "", year: []), end: (month: "", year: [])) = box(
-  stack(dir: ltr,
-    spacing: 0.75em,
-    datebox(month: start.month, year: start.year),
-    [--],
-    datebox(month: end.month, year: end.year)
-  )
-)
+// #let datebox(month: "", year: []) = [#month #year]
+
+// #let daterange(start: (month: "", year: []), end: (month: "", year: [])) = par[
+//     #datebox(month: start.month, year: start.year)---#datebox(month: end.month, year: end.year)
+// ]
 
 #let cvgrid(..cells) = pad(bottom: 0.8em)[#grid(
   columns: (left_column_size, auto),
@@ -157,18 +146,22 @@
 
 #let cventry(
   description,
-  start: (month: "", year: ""),
-  end: (month: "", year: ""),
+  // start: (month: "", year: ""),
+  // end: (month: "", year: ""),
+  date: "",
   place: "",
   role: []
 ) = cvgrid(
-  align(center, daterange(start: start, end: end)),
+  // align(right, daterange(start: start, end: end)),
+  align(right, date),
   [
     == #role
     === #xdot(place)
+    #v(-0.5em)
+
+    #description
   ],
-  [],
-  description
+  v(-1em)
 )
 
 #let cvlanguage(
