@@ -15,10 +15,10 @@
  *
  */
 
-#let left_column_size = 10%
-#let grid_column_gutter = 8pt
+#let left_column_size = 11%
+#let grid_column_gutter = 10pt
 
-#let main_color = rgb(147, 14, 14)
+#let main_color = color.blue.darken(60%)
 #let heading_color = main_color
 #let job_color = rgb("#737373")
 
@@ -36,8 +36,11 @@
   body
 ) = {
   set document(author: author, title: title)
-  set page(numbering: none)
-  set text(font: ("Latin Modern Sans", "Inria Sans"), lang: "en", fallback: true)
+  set page(
+    numbering: none,
+    margin: (x: 10%, y: 10%, top: 7%, bottom: 5%),
+  )
+  set text(font: ("Latin Modern Sans", "Inria Sans"), lang: "en", fallback: true, size:10.5pt)
   show math.equation: set text(weight: 400)
 
   /*
@@ -48,16 +51,15 @@
    * - h4: generic heading (normal, colored)
    */
   show heading.where(level: 1): element => [
-    // #v(0em)
     #box(
-      inset: (right: grid_column_gutter, bottom: 0.15em),
+      inset: (bottom: 0.15em, right: -5pt + grid_column_gutter),
       rect(fill: main_color, width: left_column_size, height: 0.25em)
     )
     #text(element.body, fill: heading_color, weight: 400)
   ]
 
   show heading.where(level: 2): element => [
-    #text(element.body + ",", size: 0.8em)
+    #text(element.body + ",", size: 0.85em)
   ]
 
   show heading.where(level: 3): element => [
@@ -121,12 +123,6 @@
   width: 100%,
 )
 
-// #let datebox(month: "", year: []) = [#month #year]
-
-// #let daterange(start: (month: "", year: []), end: (month: "", year: [])) = par[
-//     #datebox(month: start.month, year: start.year)---#datebox(month: end.month, year: end.year)
-// ]
-
 #let cvgrid(..cells) = pad(bottom: 0.8em)[#grid(
   columns: (left_column_size, auto),
   row-gutter: 0em,
@@ -136,27 +132,16 @@
 
 #let cvcol(content) = cvgrid([], content)
 
-#let xdot(s) = {
-  if s.ends-with(".") {
-    s
-  } else {
-    s + "."
-  }
-}
-
 #let cventry(
   description,
-  // start: (month: "", year: ""),
-  // end: (month: "", year: ""),
-  date: "",
+  date: [],
   place: "",
   role: []
 ) = cvgrid(
-  // align(right, daterange(start: start, end: end)),
   align(right, date),
   [
     == #role
-    === #xdot(place)
+    === #place
     #v(-0.5em)
 
     #description
