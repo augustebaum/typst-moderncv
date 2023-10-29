@@ -5,13 +5,13 @@
  *
  * - `xdot`: function, adds a trailing dot to a string only if it's not already present
  *
- * - `cvgrid`: basic layout function that wraps a grid. Controlled by two parameters `left_column_size` (default: 25%) and `grid_column_gutter` (default: 8pt) which control the left column size and the column gutter respectively.
+ * - `cvgrid`: basic layout function that wraps a grid. Controlled by two parameters `left_column_size` and `grid_column_gutter` which control the left column size and the column gutter respectively.
  *
  * - `cvcol`: used to write in the rightmost column only. Builds on `cvgrid`
  *
  * - `cventry`: used to write a CV entry. Builds on `cvgrid`
  *
- * - `cvlangauge`: used to write a language entry. Builds on `cvgrid`
+ * - `cvlanguage`: used to write a language entry. Builds on `cvgrid`
  *
  */
 
@@ -25,9 +25,12 @@
 #let project(
   title: "",
   author: [],
+  photo: "",
   phone: "",
   email: "",
   github: "",
+  website: "",
+  linkedin: "",
   left_column_size: left_column_size,
   grid_column_gutter: grid_column_gutter,
   main_color: main_color,
@@ -38,7 +41,7 @@
   set document(author: author, title: title)
   set page(
     numbering: none,
-    margin: (x: 10%, y: 10%, top: 7%, bottom: 5%),
+    margin: (x: 9%, y: 10%, top: 7%, bottom: 5%),
   )
   set text(font: ("Latin Modern Sans", "Inria Sans"), lang: "en", fallback: true, size:10.5pt)
   show math.equation: set text(weight: 400)
@@ -72,8 +75,11 @@
 
   set enum(numbering: (n) => text(fill: heading_color, [#n.]))
 
+  show link: set text(fill: luma(60))
+
   grid(
-    columns: (70%, 1fr),
+    columns: (50%, 1fr, 13%),
+    gutter: 1em,
     box[
       // Author information.
       #text([#author], weight: 400, 2.5em)
@@ -85,31 +91,49 @@
 
       #v(1em)
     ],
-    align(right + top)[
+    align(right)[
       // Contact information
       #set block(below: 0.5em)
 
       #if github != "" {
         align(top)[
-          #box(height: 1em, baseline: 20%)[#pad(right: 0.2em)[#image("icons/github.svg")]]
+          #box(height: 1em, baseline: 10%)[#image("icons/github.svg")]
           #link("https://github.com/" + github)[#raw(github)]
         ]
       }
 
       #if phone != "" {
         align(top)[
-          #box(height: 1em, baseline: 20%)[#pad(right: 0.2em)[#image("icons/phone-solid.svg")]]
+          #box(height: 1em, baseline: 2pt)[#image("icons/square-phone.svg")]
           #link("tel:" + phone)[#phone]
         ]
       }
 
       #if email != "" {
         align(top)[
-          #box(height: 1em, baseline: 20%)[#pad(right: 0.2em)[#image("icons/envelope-regular.svg")]]
+          #box(height: 1em, baseline: 18%)[#image("icons/envelope-regular.svg")]
           #link("mailto:" + email)[#raw(email)]
         ]
       }
-    ]
+
+      #if website != "" {
+        align(top)[
+          #box(height: 1em, baseline: 13%)[#image("icons/globe.svg")]
+          #link("https://" + website)[#raw(website)]
+        ]
+      }
+
+      #if linkedin != "" {
+        align(top)[
+          #box(height: 1em, baseline: 10%)[#image("icons/linkedin.svg")]
+          #link("https://www.linkedin.com/in/" + linkedin)[#raw(linkedin)]
+        ]
+      }
+
+    ],
+    if photo != "" {
+      image(photo)
+    }
   )
 
   // Main body.
