@@ -15,7 +15,10 @@
  *
  */
 
-#let left_column_size = 11%
+// The CV photo variable is called `image` so we rename the function
+#let typst_image = image
+
+#let left_column_size = 13%
 #let grid_column_gutter = 10pt
 
 #let main_color = color.blue.darken(60%)
@@ -23,27 +26,29 @@
 #let job_color = rgb("#737373")
 
 #let project(
-  title: "",
-  author: [],
-  photo: "",
+  name: [],
+  label: "",
+  image: "",
   phone: "",
   email: "",
   github: "",
-  website: "",
+  url: "",
   linkedin: "",
+  online: true,
   left_column_size: left_column_size,
   grid_column_gutter: grid_column_gutter,
   main_color: main_color,
   heading_color: heading_color,
   job_color: job_color,
-  body
+  body,
+  ..args
 ) = {
-  set document(author: author, title: title)
+  set document(author: name, title: "CV for "+name)
   set page(
     numbering: none,
     margin: (x: 9%, y: 10%, top: 7%, bottom: 5%),
   )
-  set text(font: ("Latin Modern Sans", "Inria Sans"), lang: "en", fallback: true, size:10.5pt)
+  set text(font: ("Latin Modern Sans"), lang: "en", fallback: true, size: 10.5pt)
   show math.equation: set text(weight: 400)
 
   /*
@@ -75,19 +80,21 @@
 
   set enum(numbering: (n) => text(fill: heading_color, [#n.]))
 
-  show link: set text(fill: luma(60))
+  // if online {
+    show link: set text(fill: luma(60))
+  // }
 
   grid(
     columns: (50%, 1fr, 13%),
     gutter: 1em,
     box[
       // Author information.
-      #text([#author], weight: 400, 2.5em)
+      #text([#name], weight: 400, 2.5em)
     
       #v(-1.2em)
     
       // Title row.
-      #block(text(weight: 400, 1.5em, title, style: "italic", fill: job_color))
+      #block(text(weight: 400, 1.5em, label, style: "italic", fill: job_color))
 
       #v(1em)
     ],
@@ -97,42 +104,42 @@
 
       #if github != "" {
         align(top)[
-          #box(height: 1em, baseline: 10%)[#image("icons/github.svg")]
+          #box(height: 1em, baseline: 10%)[#typst_image("icons/github.svg")]
           #link("https://github.com/" + github)[#raw(github)]
         ]
       }
 
       #if phone != "" {
         align(top)[
-          #box(height: 1em, baseline: 2pt)[#image("icons/square-phone.svg")]
+          #box(height: 1em, baseline: 2pt)[#typst_image("icons/square-phone.svg")]
           #link("tel:" + phone)[#phone]
         ]
       }
 
       #if email != "" {
         align(top)[
-          #box(height: 1em, baseline: 18%)[#image("icons/envelope-regular.svg")]
+          #box(height: 1em, baseline: 18%)[#typst_image("icons/envelope-regular.svg")]
           #link("mailto:" + email)[#raw(email)]
         ]
       }
 
-      #if website != "" {
+      #if url != "" {
         align(top)[
-          #box(height: 1em, baseline: 13%)[#image("icons/globe.svg")]
-          #link("https://" + website)[#raw(website)]
+          #box(height: 1em, baseline: 13%)[#typst_image("icons/globe.svg")]
+          #link("https://" + url)[#raw(url)]
         ]
       }
 
       #if linkedin != "" {
         align(top)[
-          #box(height: 1em, baseline: 10%)[#image("icons/linkedin.svg")]
+          #box(height: 1em, baseline: 10%)[#typst_image("icons/linkedin.svg")]
           #link("https://www.linkedin.com/in/" + linkedin)[#raw(linkedin)]
         ]
       }
-
     ],
-    if photo != "" {
-      image(photo)
+
+    if image != "" {
+      typst_image(image)
     }
   )
 
@@ -157,10 +164,10 @@
 #let cvcol(content) = cvgrid([], content)
 
 #let cventry(
-  description,
+  description: [],
   date: [],
   place: "",
-  role: []
+  role: [],
 ) = cvgrid(
   align(right, date),
   [
@@ -173,6 +180,20 @@
   v(-1em)
 )
 
+#let parse = x => eval(x, mode:"markup")
+
+// data = List[TypedDict("date": str, "role": str, "place": str, "description": str)]
+#let cv_lines(data) = {
+  for cv_info in data {
+    for (key, value) in cv_info {
+      value = value.trim("\n", at: end)
+      value = parse(value)
+      cv_info.at(key) = value
+    }
+    cventry(..cv_info)
+  }
+}
+
 #let cvlanguage(
   language: [],
   description: [],
@@ -181,3 +202,24 @@
   align(right, language),
   [#description #h(3em) #text(style: "italic", certificate)],
 )
+
+// name: string, keywords: string
+#let skill(name, keywords) = [
+  #grid(
+    columns: (35%, 1fr),
+    column-gutter: 1em,
+    align(right)[#name],
+    keywords
+  )
+]
+
+// skills = List[TypedDict("name": str, "level": str | none, "keywords": List[str])]
+#let skills_to_array(skills) = {
+  skills.map(skill_data => 
+    skill(
+      [*#parse(skill_data.name)*],
+      skill_data.keywords.map(parse).join(", ")
+    )
+  )
+}
+

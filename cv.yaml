@@ -1,0 +1,91 @@
+name: "Auguste Baum"
+label: "MSc graduate in Data Science at EPFL"
+image: "assets/noir2-lowqual.jpg"
+email: "auguste.baum@pm.me"
+phone: "+33 6 42 89 41 43"
+url: "augustebaum.github.io"
+github: "augustebaum"
+linkedin: "auguste-baum"
+work:
+  - date: July~2023---Nov.~2023
+    role: |
+      Participant in #link("https://discourse.nixos.org/t/summer-of-nix-2023/27067")[Summer of Nix 2023]
+    place: |
+      #link("https://opencollective.com/nixos")[NixOS Foundation], Paris (remote)
+    description: |
+      - Developed #link("https://nixos.org/")[Nix] package and module for open-source projects, of which #link("https://github.com/ngi-nix/ngipkgs/issues/2")[Pretalx] and #link("https://github.com/ngi-nix/ngipkgs/issues/6")[Rosenpass].
+      - Experienced #link("https://www.remotemobprogramming.org/")[mob programming], a low-latency work technique enabling fast skill improvement.
+  - date: Sept.~2022---March~2023
+    role: AI research intern
+    place: |
+      #link("https://research.swisscom.ai/")[Swisscom Digital Lab], Lausanne
+    description: |
+      - Conducted a research project on explainability of neural networks for big-data tabular datasets.
+      - Developed reproducible research pipeline system using #link("https://pytask-dev.readthedocs.io/")[`pytask`].
+  - date: 2021---2022
+    role: Co-founder & CTO
+    place: |
+      #link("https://resilio-solutions.com/")[Resilio], Lausanne
+    description: |
+      Built the backend of #link("https://resilio-solutions.com/services/tech/")[Resilio Tech], an LCA tool for digital sobriety consultancy, in Django.
+  - date: 2020---2021
+    role: |
+      #link("https://theshiftproject.org/en/article/lean-ict-our-new-report/")[Digital Sobriety] consultant
+    place: Zero Emission Group, EPFL, Lausanne
+    description: |
+      - Developed automatic PowerPoint pipeline in Python, speeding up the auditing process by 30%.
+      - Co-authored reports on environmental impact of digital technology in multinational companies.
+education:
+  - date: 2020---2023
+    role: MSc Data Science
+    place: EPFL, Lausanne
+    description: |
+      ML, information security and big data methods. MSc thesis on Explainable AI.
+  - date: 2017---2020
+    role: BSc Mathematics & Statistics and Physical Chemistry
+    place: UCL, London
+    description: |
+      First class Honours. Dissertation on Machine Learning for chemical property prediction.
+  - date: 2016---2017
+    role: |
+      #link("https://en.wikipedia.org/wiki/Classe_pr%C3%A9paratoire_aux_grandes_%C3%A9coles")[Classe préparatoire]
+    place: Lycée Saint-Louis, Paris
+    description: |
+      Admitted in PC#super[\*]. Foundations of Physics, Chemistry, Mathematics and Computer science.
+projects:
+  - date: 2022---2023
+    role: |
+      MSc project: "Path regularization for continuous counterfactual explanations"
+    place: Swisscom & EPFL, Lausanne
+    description: |
+      Developed a novel generative model regularization technique to produce high-quality explanations of deep neural network predictions. Supervised by #link("https://www.epfl.ch/labs/lts4/people/people-current/frossard/")[Prof.~Pascal Frossard] and #link("https://www.researchgate.net/profile/Daniel-Dobos-2")[Dr~Daniel Dobos].
+  - date: "2021"
+    role: |
+      Machine learning project: #link("https://github.com/CS-433/cs-433-project-2-vortexnco")["Automatic detection of available area for rooftop solar panel installations"]
+    place: EPFL, Lausanne
+    description: |
+      Built a neural network model to detect the empty space on rooftops in satellite images.
+  - date: "2020"
+    role: |
+      BSc project: "Machine Learning methods for Property Prediction"
+    place: UCL, London
+    description: |
+      Reviewed recent approaches to chemical property prediction with machine learning.
+skills:
+  - name: Functional programming
+    level: Know the basics
+    keywords: ["Haskell", "Scala"]
+  - name: Object-oriented programming
+    keywords: ["Python", "Java"]
+  - name: ML / Data
+    keywords: ["PyTorch"]
+  - name: Big data
+    keywords: ["Spark"]
+  - name: Software development
+    keywords: ["Git"]
+  - name: Scientific computing
+    keywords: ["Matlab", "Mathematica", "Sage"]
+  - name: Web development
+    keywords: ["HTML", "CSS", "Django"]
+  - name: Miscellaneous
+    keywords: ["Nix", "Vim"]
