@@ -45,11 +45,27 @@
 ) = {
   set document(author: name, title: "CV for "+name)
   set page(
-    numbering: none,
-    margin: (x: 9%, y: 10%, top: 7%, bottom: 5%),
+    footer: [
+      #set align(right)
+      #set text(
+        // size: 10.5pt,
+        fill: luma(90),
+        style: "italic",
+      )
+      #counter(page).display(
+        "(1/1)",
+        both: true,
+      )
+    ],
+    margin: (x: 8%, y: 6%),
   )
-  set text(font: ("Latin Modern Sans"), lang: "en", fallback: true, size: 10.5pt)
-  show math.equation: set text(weight: 400)
+  set text(
+    font: ("Latin Modern Sans"),
+    lang: "en",
+    fallback: true,
+    size: 10.5pt,
+    overhang: false,
+  )
 
   /*
    * How headings are used:
@@ -144,7 +160,7 @@
   )
 
   // Main body.
-  set par(justify: true, leading: 0.5em)
+  set par(justify: false, leading: 0.5em)
 
   body
 }
@@ -206,7 +222,7 @@
 // name: string, keywords: string
 #let skill(name, keywords) = [
   #grid(
-    columns: (35%, 1fr),
+    columns: (31%, 1fr),
     column-gutter: 1em,
     align(right)[#name],
     keywords

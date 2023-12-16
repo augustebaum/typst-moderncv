@@ -29,7 +29,3 @@ English and French (native), Spanish (B2), Japanese (basic)
   row-gutter: 1em,
   ..skills_to_array(cv_data.at("skills"))
 )
-
-#v(1fr)
-
-#align(center)[_(Last updated: #datetime.today().display())_]
