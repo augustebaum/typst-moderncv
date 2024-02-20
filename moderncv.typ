@@ -239,3 +239,9 @@
   )
 }
 
+// languages = List[TypedDict("language": str, "fluency": str)]
+#let cv_languages(languages) = {
+  languages.map(x =>
+    [#x.language (#x.fluency)]
+  ).join(", ")
+}

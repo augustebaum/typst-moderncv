@@ -20,7 +20,7 @@
 
 = Languages
 
-English and French (native), Spanish (B2), Japanese (basic)
+#cv_languages(cv_data.at("languages")).
 
 = Technical Skills
 

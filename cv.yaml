@@ -89,3 +89,13 @@ skills:
     keywords: ["HTML", "CSS", "Django"]
   - name: Miscellaneous
     keywords: ["Nix", "Vim"]
+languages:
+  - language: English
+    fluency: native
+  - language: French
+    fluency: native
+  - language: Spanish
+    fluency: B2
+  - language: Japanese
+    fluency: basic
+  
