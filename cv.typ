@@ -2,9 +2,7 @@
 
 #let cv_data = yaml("cv.yaml")
 
-#show: project.with(
-  ..cv_data
-)
+#show: project.with(..cv_data)
 
 = Experience
 

@@ -1,5 +1,5 @@
 name: "Auguste Baum"
-label: "MSc graduate in Data Science at EPFL"
+label: "MSc graduate from EPFL: ML, InfoSec, Software engineering"
 image: "assets/noir2-lowqual.jpg"
 email: "auguste.baum@pm.me"
 phone: "+33 6 42 89 41 43"
@@ -7,6 +7,14 @@ url: "augustebaum.github.io"
 github: "augustebaum"
 linkedin: "auguste-baum"
 work:
+  - date: Dec.~2023---Now
+    role: |
+      Full-stack developer
+    place: |
+      #link("https://resilio-solutions.com/")[Resilio], Paris (remote)
+    description: |
+      - Investigated performance issues in Resilio's infrastructure, improving request-response time by a factor of 2.
+      - Improved Resilio's testing infrastructure, cutting backend test time by  a factor of 15.
   - date: July~2023---Nov.~2023
     role: |
       Participant in #link("https://discourse.nixos.org/t/summer-of-nix-2023/27067")[Summer of Nix 2023]
@@ -14,14 +22,14 @@ work:
       #link("https://opencollective.com/nixos")[NixOS Foundation], Paris (remote)
     description: |
       - Developed #link("https://nixos.org/")[Nix] package and module for open-source projects, of which #link("https://github.com/ngi-nix/ngipkgs/issues/2")[Pretalx] and #link("https://github.com/ngi-nix/ngipkgs/issues/6")[Rosenpass].
-      - Experienced #link("https://www.remotemobprogramming.org/")[mob programming], a low-latency work technique enabling fast skill improvement.
+      - Discovered #link("https://www.remotemobprogramming.org/")[mob programming], a low-latency work technique enabling fast skill improvement.
   - date: Sept.~2022---March~2023
     role: AI research intern
     place: |
       #link("https://research.swisscom.ai/")[Swisscom Digital Lab], Lausanne
     description: |
-      - Conducted a research project on explainability of neural networks for big-data tabular datasets.
-      - Developed reproducible research pipeline system using #link("https://pytask-dev.readthedocs.io/")[`pytask`].
+      - Conducted research project on explainability of AI for big-data tabular datasets.
+      - Developed reproducible research pipeline using #link("https://pytask-dev.readthedocs.io/")[`pytask`].
   - date: 2021---2022
     role: Co-founder & CTO
     place: |
@@ -58,7 +66,13 @@ projects:
       MSc project: "Path regularization for continuous counterfactual explanations"
     place: Swisscom & EPFL, Lausanne
     description: |
-      Developed a novel generative model regularization technique to produce high-quality explanations of deep neural network predictions. Supervised by #link("https://www.epfl.ch/labs/lts4/people/people-current/frossard/")[Prof.~Pascal Frossard] and #link("https://www.researchgate.net/profile/Daniel-Dobos-2")[Dr~Daniel Dobos].
+      Developed an AI regularization technique to produce high-quality explanations of neural network predictions. Supervised by #link("https://www.epfl.ch/labs/lts4/people/people-current/frossard/")[Prof.~Pascal Frossard] and #link("https://www.researchgate.net/profile/Daniel-Dobos-2")[Dr~Daniel Dobos].
+  - date: "2022"
+    role: |
+      Semester project: "D-voting"
+    place: DEDIS lab, EPFL, Lausanne
+    description: |
+      Contributed to #link("https://github.com/dedis/d-voting")[d-voting], a blockchain-based electronic voting system.
   - date: "2021"
     role: |
       Machine learning project: #link("https://github.com/CS-433/cs-433-project-2-vortexnco")["Automatic detection of available area for rooftop solar panel installations"]
@@ -82,13 +96,13 @@ skills:
   - name: Big data
     keywords: ["Spark"]
   - name: Software development
-    keywords: ["Git"]
+    keywords: ["Nix", "Docker", "Git", "Vim", "Rust", "Go"]
   - name: Scientific computing
     keywords: ["Matlab", "Mathematica", "Sage"]
   - name: Web development
-    keywords: ["HTML", "CSS", "Django"]
-  - name: Miscellaneous
-    keywords: ["Nix", "Vim"]
+    keywords: ["HTML", "CSS", "Django", "React"]
+  # - name: Miscellaneous
+  #   keywords: ["Vim", "Rust", "Go"]
 languages:
   - language: English
     fluency: native
