@@ -1,0 +1,115 @@
+name: "Auguste Baum"
+label: "Diplômé de Master de l'EPFL: ML, InfoSec, Développement logiciel"
+image: "assets/noir2-lowqual.jpg"
+email: "auguste.baum@pm.me"
+phone: "+33 6 42 89 41 43"
+url: "augustebaum.github.io"
+github: "augustebaum"
+linkedin: "auguste-baum"
+work:
+  - date: Déc.~2023---Aujourd'hui
+    role: |
+      Développeur full-stack 
+    place: |
+      #link("https://resilio-solutions.com/")[Resilio], Paris (télétravail)
+    description: |
+      - Investigation sur la performance dans l'infrastructure de Resilio, division par 2 du temps de réponse.
+      - Améliorations de l'infrastructure de test de Resilio, réduction du temps de tests backend par un facteur de 15.
+  - date: Juil.~2023---Nov.~2023
+    role: |
+      Participation au #link("https://discourse.nixos.org/t/summer-of-nix-2023/27067")[Summer of Nix 2023]
+    place: |
+      #link("https://opencollective.com/nixos")[NixOS Foundation], Paris (télétravail)
+    description: |
+      - Développement de paquets #link("https://nixos.org/")[Nix] pour des logiciels open-source, dont #link("https://github.com/ngi-nix/ngipkgs/issues/2")[Pretalx] et #link("https://github.com/ngi-nix/ngipkgs/issues/6")[Rosenpass].
+      - Découverte du #link("https://www.remotemobprogramming.org/")[mob programming], une technique d'organisation efficace favorisant le partage de connaissances.
+  - date: Sept.~2022---Mars~2023
+    role: Stagiaire en recherche en IA
+    place: |
+      #link("https://research.swisscom.ai/")[Swisscom Digital Lab], Lausanne
+    description: |
+      - Réalisation d'un projet de recherche sur l'explicabilité de l'intelligence artificielle pour données tabulaires.
+      - Développement d'un pipeline de recherche reproductible basé sur #link("https://pytask-dev.readthedocs.io/")[`pytask`].
+  - date: 2021---2022
+    role: Co-fondateur & CTO
+    place: |
+      #link("https://resilio-solutions.com/")[Resilio], Lausanne
+    description: |
+      Développement du backend de #link("https://resilio-solutions.com/services/tech/")[Resilio Tech], un outil d'ACV pour le conseil en sobriété numérique, en Django.
+  - date: 2020---2021
+    role: |
+      Consultant en #link("https://theshiftproject.org/en/article/lean-ict-our-new-report/")[sobriété numérique]
+    place: Zero Emission Group, EPFL, Lausanne
+    description: |
+      - Développement d'une solution de génération de PowerPoint en Python, accélérant le processus de restitution par un facteur de 30%.
+      - Co-rédaction de rapports sur l'impact environnemental du numérique pour des entreprises multinationales.
+education:
+  - date: 2020---2023
+    role: Master Data Science
+    place: EPFL, Lausanne
+    description: |
+      Machine learning, sécurité de l'information et techniques Big Data. Projet de Master sur l'interprétabilité des IAs.
+  - date: 2017---2020
+    role: Bachelor Mathématiques, statistiques et chimie physique
+    place: UCL, Londres
+    description: |
+      Obtenu avec félicitations. Projet de Bachelor sur l'application du machine learning à la prédiction de propriétés chimiques.
+  - date: 2016---2017
+    role: |
+      Classe préparatoire
+    place: Lycée Saint-Louis, Paris
+    description: |
+      Admis en PC#super[\*].
+projects:
+  - date: 2022---2023
+    role: |
+      Projet de Master: "Path regularization for continuous counterfactual explanations"
+    place: Swisscom & EPFL, Lausanne
+    description: |
+      Développement d'une technique de régularisation pour améliorer la qualité des explications des prédictions d'un réseau de neurones. Supervisé par #link("https://www.epfl.ch/labs/lts4/people/people-current/frossard/")[Prof.~Pascal Frossard] et #link("https://www.researchgate.net/profile/Daniel-Dobos-2")[Dr~Daniel Dobos].
+  - date: "2022"
+    role: |
+      Projet de semestre: "D-voting"
+    place: Laboratoire DEDIS, EPFL, Lausanne
+    description: |
+      Contributions à #link("https://github.com/dedis/d-voting")[d-voting], un système de vote électronique basé sur une blockchain.
+  - date: "2021"
+    role: |
+      Projet de machine learning: #link("https://github.com/CS-433/cs-433-project-2-vortexnco")["Automatic detection of available area for rooftop solar panel installations"]
+    place: EPFL, Lausanne
+    description: |
+      Entraînement d'un réseau de neurones pour la détection d'espace disponible sur les toits à partir d'images satellite.
+  - date: "2020"
+    role: |
+      Projet de Bachelor: "Machine Learning methods for Property Prediction"
+    place: UCL, Londres
+    description: |
+      Revue de la littérature sur la prédiction de propriétés chimiques par machine learning.
+skills:
+  - name: Programmation fonctionelle
+    level: Know the basics
+    keywords: ["Haskell", "Scala"]
+  - name: Programmation orientée objet
+    keywords: ["Python", "Java"]
+  - name: ML / Data
+    keywords: ["PyTorch"]
+  - name: Big data
+    keywords: ["Spark"]
+  - name: Développement logiciel
+    keywords: ["Nix", "Docker", "Git", "Vim", "Rust", "Go"]
+  - name: Programmation scientifique
+    keywords: ["Matlab", "Mathematica", "Sage"]
+  - name: Développement web 
+    keywords: ["HTML", "CSS", "Django", "React"]
+  # - name: Miscellaneous
+  #   keywords: ["Vim", "Rust", "Go"]
+languages:
+  - language: Anglais
+    fluency: langue maternelle
+  - language: Français
+    fluency: langue maternelle
+  - language: Espagnol
+    fluency: B2
+  - language: Japonais
+    fluency: basique
+  
