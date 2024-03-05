@@ -57,7 +57,7 @@
         both: true,
       )
     ],
-    margin: (x: 10%, y: 8%),
+    margin: (x: 8%, y: 8%),
   )
   set text(
     font: ("Latin Modern Sans"),
