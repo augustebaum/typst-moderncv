@@ -7,7 +7,15 @@ url: "blog.augustebaum.com"
 github: "augustebaum"
 linkedin: "auguste-baum"
 work:
-  - date: Dec.~2023---Now
+  - date: May~2024---Now
+    role: |
+      Software engineer
+    place: |
+      #link("https://probabl.ai/")[Probabl], Paris
+    description: |
+      - Develop Probabl's product, #link("https://skore.probabl.ai/")[skore]
+      - Participate in development of #link("https://scikit-learn.org/")[scikit-learn] ecosystem
+  - date: Dec.~2023---March~2024
     role: |
       Full-stack developer
     place: |
