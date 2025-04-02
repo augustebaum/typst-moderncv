@@ -104,11 +104,11 @@ skills:
   - name: Big data
     keywords: ["Spark"]
   - name: Software development
-    keywords: ["Nix", "Docker", "Git", "Vim", "Rust", "Go"]
+    keywords: ["Nix", "Docker", "Git", "jj", "Rust"]
   - name: Scientific computing
     keywords: ["Matlab", "Mathematica", "Sage"]
   - name: Web development
-    keywords: ["HTML", "CSS", "Django", "React"]
+    keywords: ["HTML", "CSS", "Django"]
   # - name: Miscellaneous
   #   keywords: ["Vim", "Rust", "Go"]
 languages:
@@ -120,4 +120,3 @@ languages:
     fluency: B2
   - language: Japanese
     fluency: basic
-  
