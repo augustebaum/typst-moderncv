@@ -52,10 +52,12 @@
         fill: luma(90),
         style: "italic",
       )
-      #counter(page).display(
-        "(1/1)",
-        both: true,
-      )
+      #context {
+        counter(page).display(
+          "(1/1)",
+          both: true,
+        )
+      }
     ],
     margin: (x: 8%, y: 8%),
   )
