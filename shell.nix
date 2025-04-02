@@ -4,5 +4,5 @@ let
   }) {};
 in
   pkgs.mkShellNoCC {
-    packages = [pkgs.typst];
+    packages = [pkgs.typst pkgs.just];
   }
